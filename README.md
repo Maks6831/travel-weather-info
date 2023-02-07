@@ -1,4 +1,4 @@
-# travel-weather-info
+# Travel Weather Info
 
 Weather Dashboard made using jQuery and APi's
 
