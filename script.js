@@ -79,7 +79,7 @@ function fiveDayForecast(latitude, longitude){
                 let card = $('<div class="card" style="width: 18rem;">');
                 let cardBody = $('<div class="card-body card-shadow">')
                 let iconData = response.list[i].weather[0].icon;
-                let source = 'http://openweathermap.org/img/wn/'+ iconData + '@2x.png';
+                let source = 'https://openweathermap.org/img/wn/'+ iconData + '@2x.png';
                 let icon = $("<img>").attr('src', source);
                 
                 let temp = $("<p>").text('Temp: ' + objectI.main.temp + ' °C');
@@ -111,7 +111,7 @@ function currentWeatherInfo(latitude, longitude, input){
         let date = moment.unix(response.dt).format("DD/MM/YYYY");
         let iconData = response.weather[0].icon;
         console.log(iconData);
-        let source = 'http://openweathermap.org/img/wn/'+ iconData + '@2x.png';
+        let source = 'https://openweathermap.org/img/wn/'+ iconData + '@2x.png';
         let icon = $("<img>").attr('src', source);
         let location = $('<h1>').text(input + ' ' + date).append(icon);
         let description = $("<p>").text(response.weather[0].description + '!');
