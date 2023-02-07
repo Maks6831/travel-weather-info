@@ -1,4 +1,6 @@
-.padding {
-    padding: 10px;
-    margin: 10px;
+.buttonstyle {
+    padding: 5px;
+    margin: 5px;
+    display: block;
+    min-width: 100px;
 }

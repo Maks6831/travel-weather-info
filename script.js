@@ -1,10 +1,51 @@
+$(document).ready(function(){
+
+
+
 let apiKey = '3e1093f5d85b4cf539a5a5256729c7de';
-let apiKeyno2 = '29ce0cb407b2ddf0f16918761f1b5b94'
-let apiKeyno3 = 'f99a2eb7e96df9308bdccc7005ec552e'
+let apiKeyno2 = '29ce0cb407b2ddf0f16918761f1b5b94';
+let apiKeyno3 = 'f99a2eb7e96df9308bdccc7005ec552e';
+let searchHistory = [];
+
+function addtohistory(latitude, longitude, input){
+    let cityData = {
+        input: input,
+        latitude: latitude,
+        longitude: longitude,
+    }
+    let index = searchHistory.findIndex(x => x.input === input);
+    console.log(typeof index);
+    if(index != -1){
+        return
+    } else {
+        console.log('input = ', input);
+        console.log('index = ', index);
+        
+        searchHistory.push(cityData);
+        localStorage.setItem('search-history', JSON.stringify(searchHistory))
+        createButton(latitude, longitude, input);
+    }
+    
+}
+
+function displaySearchHistory(){
+    let storedCities = localStorage.getItem('search-history');
+    if(storedCities){
+        searchHistory = JSON.parse(storedCities);
+    }
+    //for(let i = searchHistory.length -1; i >= 0; i--){
+    for(let i = 0; i < searchHistory.length; i++){
+        createButton(searchHistory[i].latitude, searchHistory[i].longitude, searchHistory[i].input);
+    }
+}
+displaySearchHistory();
+
+
+
 
 function createButton(latitude, longitude, input){
     let button = $('<button type="button" class="btn btn-primary">').text(input);
-    button.addClass('padding');
+    button.addClass('buttonstyle');
     $('#asideBoi').append(button);
     button.on('click', function(){
         currentWeatherInfo(latitude, longitude, input);
@@ -89,7 +130,7 @@ $("#search-form").submit(function(event){
         let longitude = response[0].lon;
         currentWeatherInfo(latitude, longitude, input);
         fiveDayForecast(latitude, longitude);
-        createButton(latitude, longitude, input);
+        addtohistory(latitude, longitude, input);
       })
 
     })
@@ -104,4 +145,4 @@ $("#search-form").submit(function(event){
 // query url for 16 day forecast
 
 
-
+})
