@@ -62,7 +62,7 @@ function createButton(latitude, longitude, input){
 
 // function which takes in the lat and long values from the geocoding api search and calculates five days forecast. 
 function fiveDayForecast(latitude, longitude){
-    let fiveDayUrl = 'http://api.openweathermap.org/data/2.5/forecast?lat='+ latitude + '&lon='+ longitude +'&units=metric&appid=' + apiKey;
+    let fiveDayUrl = 'https://api.openweathermap.org/data/2.5/forecast?lat='+ latitude + '&lon='+ longitude +'&units=metric&appid=' + apiKey;
     $.ajax({
         url: fiveDayUrl,
         method: "GET",
@@ -100,7 +100,7 @@ function fiveDayForecast(latitude, longitude){
 
 // function which takes in the lat and long values from the geocoding api search and calculates current weather using current weather api. 
 function currentWeatherInfo(latitude, longitude, input){
-    let forecastUrl = 'http://api.openweathermap.org/data/2.5/weather?lat='+ latitude +'&lon='+ longitude +'&units=metric&appid=' + apiKeyno2;
+    let forecastUrl = 'https://api.openweathermap.org/data/2.5/weather?lat='+ latitude +'&lon='+ longitude +'&units=metric&appid=' + apiKeyno2;
     $.ajax({
         url: forecastUrl,
         method: "GET",
@@ -131,7 +131,7 @@ function currentWeatherInfo(latitude, longitude, input){
 $("#search-form").submit(function(event){
     event.preventDefault();
     let input = $("#search-input").val().trim();
-    const latlongUrl = 'http://api.openweathermap.org/geo/1.0/direct?q=' + input + '&limit=1&appid=' + apiKey;
+    const latlongUrl = 'https://api.openweathermap.org/geo/1.0/direct?q=' + input + '&limit=1&appid=' + apiKey;
     $.ajax({
         url: latlongUrl,
         method: "GET"
