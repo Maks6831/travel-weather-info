@@ -7,11 +7,13 @@ Weather Dashboard made using jQuery and APi's
 The purpose of this project was to create a fully functioning weather dashboard which is able to take any city name and return the current weather as well as a five day forecast. The buttons are dynamically created and are saved to localstorage so that the end user can revisit weather data from previous searches. The project uses open weather's current weather, Geocoding and five day forecast API's to retrieve the relevent weather data. jQuery is used to dynamically create the HTML elements (buttons, cards, etc.). The project uses jQuery's Ajax calls to request the data.
 
 ### Screenshot
+<img width="1435" alt="Screenshot 2023-02-07 at 17 18 37" src="https://user-images.githubusercontent.com/118021969/217319479-959b3f1d-2744-4ace-a09d-0fc64c40c078.png">
 
 
 ### Link to Deployed Webpage
 
-<img width="1435" alt="Screenshot 2023-02-07 at 17 18 37" src="https://user-images.githubusercontent.com/118021969/217319479-959b3f1d-2744-4ace-a09d-0fc64c40c078.png">
+https://maks6831.github.io/travel-weather-info/
+
 
 ### Credits
 
