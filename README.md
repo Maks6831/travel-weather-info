@@ -11,7 +11,7 @@ The purpose of this project was to create a fully weather dashboard which is abl
 
 ### Link to Deployed Webpage
 
-
+<img width="1435" alt="Screenshot 2023-02-07 at 17 18 37" src="https://user-images.githubusercontent.com/118021969/217319479-959b3f1d-2744-4ace-a09d-0fc64c40c078.png">
 
 ### Credits
 
