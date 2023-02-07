@@ -4,3 +4,13 @@
     display: block;
     min-width: 100px;
 }
+
+.card-shadow{
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius: 10px;
+    margin: 10px;
+    background: #30A6B2;
+    background: -webkit-linear-gradient(top left, #30A6B2, #6858B7);
+    background: -moz-linear-gradient(top left, #30A6B2, #6858B7);
+    background: linear-gradient(to bottom right, #30A6B2, #6858B7);
+} 
