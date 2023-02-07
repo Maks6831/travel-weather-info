@@ -18,7 +18,6 @@ function addtohistory(latitude, longitude, input){
     }
     // check to see if city has already been stored (to prevent identical buttons being created)
     let index = searchHistory.findIndex(x => x.input === input);
-    console.log(typeof index);
     if(index != -1){
         return
     } else {
@@ -68,7 +67,6 @@ function fiveDayForecast(latitude, longitude){
         method: "GET",
     }).then(function(response){
         $('#forecast').empty();
-        console.log(response);
         let object = response.list
         // for loop which runs through the length of the list in API object.
         for(let i = 0; i < object.length; i++){
@@ -106,11 +104,9 @@ function currentWeatherInfo(latitude, longitude, input){
         method: "GET",
     }). then(function(response){
         $("#today").empty();
-        console.log(response);
         // uses the unix time stamp to display date
         let date = moment.unix(response.dt).format("DD/MM/YYYY");
         let iconData = response.weather[0].icon;
-        console.log(iconData);
         let source = 'https://openweathermap.org/img/wn/'+ iconData + '@2x.png';
         let icon = $("<img>").attr('src', source);
         let location = $('<h1>').text(input + ' ' + date).append(icon);
@@ -136,10 +132,7 @@ $("#search-form").submit(function(event){
         url: latlongUrl,
         method: "GET"
       }).then(function(response){
-        console.log(response);
-        console.log("latitude is " + response[0].lat);
         let latitude = response[0].lat;
-        console.log(response[0].lon);
         let longitude = response[0].lon;
         // call current weather
         currentWeatherInfo(latitude, longitude, input);
