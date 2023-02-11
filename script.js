@@ -18,6 +18,7 @@ function addtohistory(latitude, longitude, input){
     }
     // check to see if city has already been stored (to prevent identical buttons being created)
     let index = searchHistory.findIndex(x => x.input === input);
+    let index = searchHistory.indexOf()
     if(index != -1){
         return
     } else {
